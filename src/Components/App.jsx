@@ -5,7 +5,15 @@ import { Camera, GitHub } from '@mui/icons-material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Box, Stack } from "@mui/system";
 import Link from '@mui/material/Link';
+
+
+
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+
+
+
 
 function Copyright() {
     return (
@@ -73,7 +81,7 @@ const App = () => {
                             <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                                 <CardMedia
                                 component="img"
-                                image="https://picsum.photos/300/300?random=${card}"
+                                image="https://picsum.photos/300/300?random=1"
                                 alt="random image"
                                 
                                 />
