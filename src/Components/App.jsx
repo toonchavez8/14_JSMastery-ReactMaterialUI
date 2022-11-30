@@ -5,13 +5,10 @@ import { Camera, GitHub } from '@mui/icons-material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Box, Stack } from "@mui/system";
 import Link from '@mui/material/Link';
-
+import Reader from "./Reader";
 
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-
-
 
 
 
@@ -37,8 +34,10 @@ function Copyright() {
 
 const theme = createTheme();
 
-const App = () => {
-  
+
+const App = () => {    
+    
+    
   return (
     <ThemeProvider theme={theme} >
         <CssBaseline />
@@ -50,7 +49,9 @@ const App = () => {
                 </Typography>
             </Toolbar>
             </AppBar>
+                
             <main>
+        
                 {/* Hero Banner */}
                 <Box sx={{bgcolor:'background.paper', pt:8, pb:6,}} >
                     <Container maxWidth="sm">
@@ -68,12 +69,15 @@ const App = () => {
                             justifyContent="center"
                             >
                                 <Button variant="contained" color="primary">View Photos</Button>
-                                <Button variant="outlined" color="primary">Secondary Actions</Button>
+                                {/* button to open model */}
+                                <Button variant="outlined" color="primary" onClick={() => this.setState({showModal: true})}>Read Book</Button>
+        
                             </Stack>
                         </div>
                     </Container>
                 </Box>
                 {/* End Hero Banner */}
+          
                 <Container sx={{py:8}} maxWidth="md">
                     <Grid container spacing={4}>
                         {cards.map((card) => (
@@ -101,6 +105,7 @@ const App = () => {
                         </Grid>
                         ))}
                     </Grid>
+                  
                 </Container>
             </main>
             {/* Footer */}
@@ -113,6 +118,8 @@ const App = () => {
                 </Typography>
                 <Copyright />
             </Box>
+
+            <Reader />
     </ThemeProvider>
   )
     }
